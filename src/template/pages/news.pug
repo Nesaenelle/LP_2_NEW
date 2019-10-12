@@ -6,17 +6,28 @@ block content
 		section.section.news-section
 			.container
 				.main-title
-					span(data-translate="title_news") NEWS
+					span(data-translate="news")
+					
+					.filter
+						.dropdown(data-dropdown)
+							.dropdown__value(data-dropdown-value data-translate="september") September
+							.dropdown__list
+								.dropdown__list__item(data-dropdown-item data-translate="september") September
+								.dropdown__list__item(data-dropdown-item data-translate="october") October
+						.dropdown(data-dropdown)
+							.dropdown__value(data-dropdown-value) 2019
+							.dropdown__list
+								.dropdown__list__item(data-dropdown-item) 2019
+								.dropdown__list__item(data-dropdown-item) 2020
 				.news-list
 					each val in [1,2,3,4]
 						.news-list__item
-							.news-list__item__img
-								span CREATE 
-								span YOUR OWN CRYPTO
-								span EXCHANGE PLATFORM
+							.news-list__item__img(style='background: url(img/chains.jpg)' data-translate="slider_text1")
 							.news-list__item__date 18.09.2019
-							.news-list__item__text Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec. Donec viverra eleifend lacus, vitae ullamcorper metus. Sed sollicitudin ipsum quis nunc sollicitudin ultrices. Donec euismod scelerisque ligula. Maecenas eu varius risus, eu aliquet arcu. Curabitur fermentum suscipit est, tincidunt mattis lorem luctus id. Donec eget massa a diam condimentum pretium. Aliquam erat volutpat. Integer ut tincidunt orci. Etiam tristique, elit ut consectetur iaculis, metus lectus mattis justo, vel mollis eros neque quis augue. Sed lobortis ultrices lacus, a placerat metus rutrum sit amet. Aenean ut suscipit justo.
-							a(href="news_single.html").news-list__item__link read
+							.news-list__item__text(data-translate="news_text")
+							a(href="news_single.html" data-translate="read").news-list__item__link
+
+				.more-news(data-translate="more_news")
 	include ./../translate.pug
 
 block footer

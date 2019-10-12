@@ -46,13 +46,8 @@ mixin footer(params)
 						circle(cx='50.3' cy='74.7' r='5.5')
 		.copyright &copy; Exchange2.net 2018
 		.footer-form.active
-			.footer-form__text
-				| Become 
-				br
-				| exchange platform 
-				br
-				| owner
+			.footer-form__text(data-translate="become_ex_platform_partner")
 			form#footer-create-platform-form.form(novalidate='')
 				input.input(type='email' data-pattern='email' name='email' placeholder='Email' data-error-msg='Email is invalid' required='')
-			.create-trading-btn Create Your Account
+			.create-trading-btn(data-translate="create_your_account")
 			.submit-create-trading-form JOIN NOW

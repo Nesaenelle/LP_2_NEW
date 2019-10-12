@@ -1,9 +1,9 @@
-.contacts-footer
-	.contacts-label START YOUR TRADE NOW
+.main-footer
+	.main-footer__label(data-translate="start_your_trade_now")
 	.container
-		.contacts-footer__button
-			.btn.create-trading-btn Create Your Account
-		.contacts-footer__list
+		.main-footer__button
+			.btn.create-trading-btn(data-translate="create_your_account")
+		.main-footer__list
 			div Info
 			div
 				a(href='support.html') User support
@@ -15,7 +15,7 @@
 				a(href='') Fees and limits
 			div
 				a(href='') Referral program
-		.contacts-footer__list
+		.main-footer__list
 			div Trade Now
 			div
 				a(href='') Secure Wallet
@@ -23,7 +23,7 @@
 				a(href='') Exchange
 			div
 				a(href='') Margin Trade
-		.contacts-footer__list
+		.main-footer__list
 			div About
 			div
 				a(href='news.html') News
@@ -35,7 +35,7 @@
 				a(href='') Road map
 			div
 				a(href='') Reviews
-		.contacts-footer__list
+		.main-footer__list
 			div Documents
 			div
 				a(href='') User agreement
@@ -49,12 +49,12 @@
 				a(href='') Wrongdepo Policy
 			div
 				a(href='') Media-Kit
-		.contacts-footer__list
+		.main-footer__list
 			div Follow us
 			ul
 				each val in ['facebook-black', 'bra-github', 'twitter-black', 'bra-blogger',  'bra-reddit', 'bra-instagram', 'youtube', 'medium', 'telegram-black']
 					li
 						a(href='' target='_blank')
 							img(src=('img/' + val + '.svg') alt='')
-		.contacts-footer__bottom
+		.main-footer__bottom
 			.copyright &copy; 2019 Exchange2.net

@@ -9,7 +9,7 @@ head
 	link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,500,600,700,900" rel="stylesheet")
 	link(href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,600,700,900" rel="stylesheet")
 	link(href="https://fonts.googleapis.com/css?family=Roboto&display=swap&subset=cyrillic" rel="stylesheet")
-body
+body(class=htmlWebpackPlugin.options.page + '-page')
 	include  parts/header.pug
 	
 	//- main(class=htmlWebpackPlugin.options.page + '-page')

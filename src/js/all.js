@@ -9,6 +9,7 @@ import Parallax from './parallax';
 import Menu from './menu';
 import Swipe from './swipe';
 import Translate from './translate';
+import Dropdown from './dropdown';
 
 
 const navigation = new Navigatioin();
@@ -17,6 +18,7 @@ const parallax = new Parallax();
 const menu = new Menu();
 const swipe = new Swipe();
 const translate = new Translate();
+const dropdown = new Dropdown();
 
 // NES_API.add('animation', {
 //     constructor: function () {
@@ -138,12 +140,20 @@ $('.submit-create-trading-form').on('click', function () {
 
 if ($('.footer-form').length) {
     window.addEventListener('click', function (e) {
-        if (!$('.footer-form')[0].contains(e.target)) {
+        if ($('.footer-form').length && !$('.footer-form')[0].contains(e.target)) {
             // burger.classList.remove('active');
             $('.footer-form').removeClass('ready sent');
         }
     }, false);
 }
+
+$('.more-news').on('click', function() {
+    let items;
+    
+    items = $(this).prev().find('.news-list__item').slice(0, window.innerWidth > 600 ? 4 : 2).clone();
+   
+    $(this).prev().append(items);
+});
 
 
 $('.slick-slider').slick({

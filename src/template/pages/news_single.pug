@@ -1,0 +1,40 @@
+extends ../layout.pug
+include ../parts/footer
+
+block content
+	main.main
+		section.section.news-single-section
+			
+			.news-single-top(style="background: url(img/chains.jpg)")
+				.container
+					.main-title
+						span(data-translate="slider_text1") 					
+			.container
+				.news-single
+					.news-single__date 18.09.2019
+					.news-single__text(data-translate="news_text")
+					img(src="img/chains.jpg", alt="")
+					.news-single__text(data-translate="news_text")
+				
+			.container
+				.news-single-bottom
+					a(href="news.html").back-btn 
+						svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+							defs
+								path#a-1(d='M10.24 7.38L6.98 4.12v21.56h-2V4.16L1.76 7.38.34 5.98 6 .32l5.66 5.66z')
+							g(fill='none' fill-rule='evenodd' transform='translate(18 11)')
+							mask#b-1(fill='#fff')
+								use(xlink:href='#a-1')
+							g(fill='#56a54b' mask='url(#b-1)')
+								path(d='M-18-11h48v48h-48z')
+						span(data-translate="back_to_news")
+
+					div.actions
+						img(src="", alt="")
+						img(src="", alt="")
+						img(src="", alt="")
+		include ./../parts/main-footer.pug
+	include ./../translate.pug
+
+block footer
+	+footer({showMouse: false, initClass: ''})
