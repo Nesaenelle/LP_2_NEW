@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Icons/Help</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M5.99999997,5.50999997 L18,5.50999997 C18.5128359,5.50999997 18.9355071,5.89604016 18.9932722,6.39337885 L19,6.50999997 L19,14.51 C19,15.0228358 18.6139598,15.4455071 18.1166211,15.5032722 L18,15.51 L11,15.51 L6.99999997,18.51 L6.99999997,15.51 L5.99999997,15.51 C5.48716413,15.51 5.06449281,15.1239598 5.0067277,14.6266211 L4.99999997,14.51 L4.99999997,6.50999997 C4.99999997,5.99716414 5.38604016,5.57449281 5.88337885,5.5167277 L5.99999997,5.50999997 L18,5.50999997 Z M18,6.50999998 L5.99999997,6.50999998 L5.99999997,14.51 L8.02999998,14.51 L8.02999998,16.51 L10.73,14.51 L18,14.51 L18,6.50999998 Z M12,11.01 L12,12.01 L7.99999998,12.01 L7.99999998,11.01 L12,11.01 Z M16,9.00999999 L16,10.01 L7.99999998,10.01 L7.99999998,9.00999999 L16,9.00999999 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop_Support_2" transform="translate(-930.000000, -413.000000)">
+            <g id="Icons/Message" transform="translate(925.000000, 408.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Combined-Shape" fill-rule="nonzero"></g>
+                <g id="Colors/7" mask="url(#mask-2)" fill="#000000" fill-rule="evenodd">
+                    <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

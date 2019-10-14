@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Icons/Check</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M12,4.99999997 C15.8659933,4.99999997 19,8.13400674 19,12 C19,15.8659933 15.8659933,19 12,19 C8.13400674,19 4.99999997,15.8659933 4.99999997,12 C4.99999997,8.13400674 8.13400674,4.99999997 12,4.99999997 Z M12,5.99999997 C8.68629149,5.99999997 5.99999997,8.68629149 5.99999997,12 C5.99999997,15.3137085 8.68629149,18 12,18 C13.5912989,18 15.1174224,17.367859 16.2426407,16.2426407 C17.367859,15.1174224 18,13.5912989 18,12 C18,8.68629149 15.3137085,5.99999997 12,5.99999997 Z M13.77,9.51999999 L14.47,10.23 L12.71,12 L14.47,13.77 L13.77,14.47 L12,12.71 L10.23,14.47 L9.52999999,13.77 L11.29,12 L9.52999999,10.23 L10.23,9.51999999 L12,11.29 L13.77,9.51999999 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop_Support_2" transform="translate(-811.000000, -461.000000)">
+            <g id="Icons/X" transform="translate(806.000000, 456.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Combined-Shape" fill-rule="nonzero"></g>
+                <g id="Colors/red" mask="url(#mask-2)" fill="#F53434" fill-rule="evenodd">
+                    <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
