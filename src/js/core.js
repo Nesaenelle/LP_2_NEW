@@ -1,163 +1,36 @@
-// (function() {
-function ELEM(params) {
-    this.el = params.el || null;
-};
-
-ELEM.prototype.addEvent = function(type, fn) {
-    this.el.addEventListener(type, fn, false);
-    return this;
-};
-
-ELEM.prototype.removeEvent = function(type, fn) {
-    this.el.removeEventListener(type, fn, false);
-    return this;
-};
-
-ELEM.prototype.addClass = function(className) {
-    this.el.classList.add(className);
-    return this;
-};
-
-ELEM.prototype.removeClass = function(className) {
-    this.el.classList.remove(className);
-    return this;
-};
-
-ELEM.prototype.toggleClass = function(className) {
-    if (this.el.classList.contains(className)) {
-        this.el.classList.remove(className);
-    } else {
-        this.el.classList.add(className);
-    }
-    return this;
-};
-
-
-ELEM.prototype.find = function(selector) {
-    var el = this.el.querySelector(selector);
-    return el ? new ELEM({ el: el }) : null;
-};
-
-ELEM.prototype.findAll = function(selector) {
-    var self = this;
-    var els = this.el.querySelectorAll(selector);
-    els = Array.prototype.slice.call(els);
-    return els.map(function(el) {
-        return new ELEM({ el: el });
-    });
-};
-ELEM.prototype.getAttr = function(name) {
-    return this.el.getAttribute(name);
-};
-ELEM.prototype.setAttr = function(name, value) {
-    return this.el.setAttribute(name, value);
-};
-ELEM.prototype.hide = function(name) {
-    return this.el.style.display = 'none';
-};
-
-ELEM.prototype.show = function(name) {
-    return this.el.style.display = 'block';
-};
-
-ELEM.prototype.style = function(name, val) {
-    this.el.style[name] = val;
-};
-
-function SELECTOR() {
-
-};
-
-SELECTOR.prototype.initElem = function(el) {
-    return new ELEM({ el: el });
-};
-
-SELECTOR.prototype.find = function(selector, context) {
-    var el;
-    if (selector instanceof HTMLElement) {
-        el = selector;
-    } else {
-        el = context ? context.querySelector(selector) : document.querySelector(selector);
-    }
-
-    return this.initElem(el);
-};
-
-SELECTOR.prototype.findAll = function(selector, context) {
-    var self = this;
-    var els = context ? context.querySelectorAll(selector) : document.querySelectorAll(selector);
-    els = Array.prototype.slice.call(els);
-    return els.map(function(o) {
-        return self.initElem(o)
-    });
-};
-
-SELECTOR.prototype.exists = function(selector, context) {
-    return this.find(selector, context).el ? true : false;
-}
-
-
-// window.NES_API = new API_CONSTRUCTOR();
-
-const instance = new API_CONSTRUCTOR();
-export const NES_API = instance;
-
-function API_CONSTRUCTOR() {
-    this.promises = {};
-    this.collection = [];
-    this.SELECTOR = new SELECTOR();
-    this.FORM = Form;
-};
-
-API_CONSTRUCTOR.prototype.add = function(name, params) {
-    if (!name || typeof name !== 'string') {
-        throw new Error('API ERROR');
-    }
-
-    for (var method in params) {
-        if (method !== 'constructor') {
-            params.constructor.prototype[method] = params[method];
-        }
-    }
-
-    this.collection.push({ name: name, params: params });
-    this.promises[name] = new Promise(function(resolve, reject) {
-        resolve();
-    });
-};
-
-API_CONSTRUCTOR.prototype.on = function(name) {
-    return this.promises[name];
-};
-
-API_CONSTRUCTOR.prototype.init = function(name) {
-    var self = this;
-    this.collection.forEach(function(o) {
-        self[o.name] = new o.params.constructor();
-    });
-};
-
-
+import $ from 'jquery';
 export function Form(form) {
     var self = this;
     this.controls = [];
     this.form = form;
     this.subscriptions = [];
+    this.submitButton = $(form).find('button');
 
-    [].forEach.call(form.querySelectorAll('input'), function(input) {
+    [].forEach.call($(form).find('input, textarea'), function (input) {
         self.controls.push(new Input(input, self));
     });
 
-    [].forEach.call(form.querySelectorAll('textarea'), function(input) {
-        self.controls.push(new Input(input, self));
-    });
+    form.onkeydown = function (e) {
+        if (e.keyCode === 13) {
+            form.onsubmit(e);
+        }
+    };
 
-    form.onsubmit = function(e) {
+    form.onchange = function () {
+        var errors = self.checkOnErrors();
+        errors ? self.submitButton.attr('disabled', true) : self.submitButton.removeAttr('disabled');
+    };
+
+    form.oninput = function () {
+        var errors = self.checkOnErrors();
+        errors ? self.submitButton.attr('disabled', true) : self.submitButton.removeAttr('disabled');
+    };
+
+    form.onsubmit = function (e) {
         e.preventDefault();
-        //console.log("here is XXXX");
         var focusState = false;
 
-        self.controls.forEach(function(ctrl) {
+        self.controls.forEach(function (ctrl) {
             if (!focusState) {
                 ctrl.input.focus();
                 if (!ctrl.validate()) {
@@ -166,19 +39,16 @@ export function Form(form) {
             }
         });
 
-        var errors = self.controls.reduce(function(a, b) {
-            b = b.valid ? 0 : 1;
-            return a + b;
-        }, 0);
+        var errors = self.checkOnErrors();
 
         //console.log(errors);
 
         if (errors === 0) {
-            self.subscriptions.forEach(function(fn) {
+            self.subscriptions.forEach(function (fn) {
                 //console.log(self);
                 fn.call(self, self.getValue())
             });
-            self.controls.forEach(function(ctrl) {
+            self.controls.forEach(function (ctrl) {
                 ctrl.input.value = '';
                 ctrl.clear();
             })
@@ -186,20 +56,27 @@ export function Form(form) {
     };
 };
 
-Form.prototype.validate = function() {
-    this.controls.forEach(function(ctrl) {
+Form.prototype.checkOnErrors = function () {
+    return this.controls.reduce(function (a, b) {
+        b = b.valid ? 0 : 1;
+        return a + b;
+    }, 0);
+};
+
+Form.prototype.validate = function () {
+    this.controls.forEach(function (ctrl) {
         ctrl.validate()
     });
 };
 
-Form.prototype.onSubmit = function(fn) {
+Form.prototype.onSubmit = function (fn) {
     this.subscriptions.push(fn);
 };
 
-Form.prototype.getValue = function(fn) {
+Form.prototype.getValue = function (fn) {
     var obj = {};
 
-    this.controls.forEach(function(ctrl) {
+    this.controls.forEach(function (ctrl) {
         obj[ctrl.name] = ctrl.value;
     });
 
@@ -217,14 +94,34 @@ function Input(input, parent) {
     this.valid = false;
     this.value = input.value;
     this.name = input.getAttribute('name');
-    input.oninput = function() {
-        self.value = this.type === 'checkbox' ? this.checked : this.value;
-        self.validate();
-    };
+
+    if (input.type === 'file') {
+        // const reader = new FileReader();
+        this.value = [];
+        this.appendFiles = [];
+        input.onchange = function () {
+            if (this.files.length) {
+                input.parentNode.classList.add('uploaded');
+                let fileName = document.createElement('div');
+                fileName.innerHTML = this.files[0].name;
+                self.appendFiles.push(fileName);
+                self.value.push(this.files[0]);
+                insertAfter(fileName, input);
+                self.validate();
+            }
+        };
+    } else {
+        input.oninput = function () {
+            self.value = this.type === 'checkbox' ? this.checked : this.value;
+            self.validate();
+        };
+    }
 }
 
-Input.prototype.validate = function() {
-    if (this.input.getAttribute('data-pass-confirm')) {
+Input.prototype.validate = function () {
+    if (this.input.type === 'file') {
+        this.value.length === 0 ? this.addError() : this.removeError();
+    } else if (this.input.getAttribute('data-pass-confirm')) {
         if (this.input.value === this.parent.form.querySelector('[data-pattern="password"]').value) {
             this.removeError();
         } else {
@@ -242,7 +139,7 @@ Input.prototype.validate = function() {
     return this.valid;
 };
 
-Input.prototype.addError = function() {
+Input.prototype.addError = function () {
     this.input.classList.add('invalid');
     this.input.classList.remove('valid');
     this.msg.className = 'input-error-text';
@@ -252,23 +149,31 @@ Input.prototype.addError = function() {
     this.valid = false;
 };
 
-Input.prototype.removeError = function() {
+Input.prototype.removeError = function () {
     this.input.classList.add('valid');
     this.input.classList.remove('invalid');
     // this.msg.className = 'input-msg valid';
     // this.msg.innerHTML = 'This is correct email';
-    if(this.msg.parentNode) {
+    if (this.msg.parentNode) {
         this.input.parentNode.removeChild(this.msg);
     }
     this.valid = true;
 };
 
-Input.prototype.clear = function() {
+Input.prototype.clear = function () {
     this.input.classList.remove('valid');
     this.input.classList.remove('invalid');
     // this.input.removeChild(this.msg);
     if (this.input.checked) {
         this.input.checked = false;
+    }
+    if (this.input.type === 'file') {
+        this.value = [];
+        this.input.parentNode.classList.remove('uploaded');
+        this.appendFiles.forEach(r => {
+            this.input.parentNode.removeChild(r);
+        });
+        this.appendFiles = [];
     }
     this.valid = false;
 };

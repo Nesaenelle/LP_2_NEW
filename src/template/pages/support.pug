@@ -1,0 +1,44 @@
+extends ../layout.pug
+include ../parts/footer
+
+block content
+	main.main
+		section.section.support-section
+			.container
+				.main-title
+					span(data-translate="support")
+				
+				.support-container
+					.support-left
+						.support-title Take Your Ticket here
+						.support-subtitle We answer within 30 seconds! No answering machines or robots. Communicate only with living people.
+
+						form.form#support-form(novalidate)
+							.input
+								input(type="email" data-pattern='email' name='email' placeholder='Email' data-error-msg='Email is invalid' required maxlength="50")
+								.icon
+							.input
+								input(type="text" placeholder="Ticket Theme" name="theme" data-error-msg='Type something' required maxlength="100")
+								.icon
+							.textarea
+								textarea(placeholder="About problem or quastion" name="text" maxlength="1000" data-error-msg='Type something' required)
+								.icon
+
+							.fileupload 
+								.fileupload-wrapper 
+									span Upload your screens
+									input(type="file" data-error-msg='Upload file' name="files" required multiple )
+
+							button.btn(type="submit" disabled) Send 
+					.support-right
+						.support-title You can also find answers to your questions here.
+						ul
+							li 
+								a(href="faq.html") FAQ
+							li
+								a(href="knownladge.html") Knownladge Base
+		include ./../parts/main-footer.pug
+	include ./../translate.pug
+
+block footer
+	+footer({showMouse: false, initClass: ''})

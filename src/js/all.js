@@ -90,6 +90,24 @@ if ($('#footer-create-platform-form').length) {
 }
 
 
+if ($('#support-form').length) {
+    let supportForm = new Form($('#support-form')[0]);
+    supportForm.onSubmit(function (data) {
+        // ajax here
+        
+        // $('.footer-form').addClass('sent');
+
+        // var url = document.URL + "mail_library/MC_library.php";
+        // var param = {
+        //     user_mail: data.email,
+        // }
+        // $.post(url, param, function (data) {
+        //     //some event after submit
+        //     //answer - data
+        // });
+    });
+}
+
 // if ($.exists('#login-form')) {
 //     var loginForm = new Form($.find('#login-form').el);
 

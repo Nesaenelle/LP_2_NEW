@@ -66,6 +66,11 @@ module.exports = {
             template: 'src/template/pages/news_single.pug',
             page: 'news'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'support.html',
+            template: 'src/template/pages/support.pug',
+            page: 'support'
+        }),
         new ExtractTextPlugin({ allChunks: true, filename: "styles.css" }),
         new CopyWebpackPlugin([
             { from: 'src/img', to: 'img' }
