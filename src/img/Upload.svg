@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="15px" viewBox="0 0 12 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Icons/Upload</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M17,9.99999999 C17.4999271,9.95892091 17.9423545,10.3217114 18,10.82 L18,10.82 L18,18.18 C17.9473978,18.6810238 17.5016213,19.0465605 17,19 L17,19 L6.99999997,19 C6.49837869,19.0465605 6.05260216,18.6810238 5.99999997,18.18 L5.99999997,18.18 L5.99999997,10.82 C6.05764552,10.3217114 6.50007292,9.95892091 6.99999997,9.99999999 L6.99999997,9.99999999 L10.5,9.99999999 L10.5,11 L6.99999997,11 L6.99999997,18 L17,18 L17,11 L13.5,11 L13.5,9.99999999 Z M12.01,4.81999997 L14.84,7.64999998 L14.13,8.34999998 L12.5,6.71999998 L12.5,14 L11.5,14 L11.5,6.73999998 L9.88999999,8.34999998 L9.17999999,7.64999998 L12.01,4.81999997 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop_Support_2" transform="translate(-361.000000, -744.000000)">
+            <g id="Icons/Upload" transform="translate(355.000000, 740.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Combined-Shape" fill-rule="nonzero"></g>
+                <g id="Colors/7" mask="url(#mask-2)" fill="#798e8a" fill-rule="evenodd">
+                    <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

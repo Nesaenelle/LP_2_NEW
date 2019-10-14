@@ -230,18 +230,7 @@
             padding-top: 44px;
         }
 
-        &+.main-footer {
-            margin-top: 130px;
-
-            @media screen and (max-width: 980px) {
-                margin-top: 80px;
-            }
-
-            @media screen and (max-width: 600px) {
-                margin-top: 60px;
-            }
-        }
-
+    
         .main-title {
             color: #fff;
             font-size: 60px;
@@ -337,7 +326,7 @@
                     margin-left: 20px;
                     width: 15px;
                     height: 15px;
-                    background: #ccc;
+                    // background: #ccc;
                     display: block;
                     cursor: pointer;
                 }

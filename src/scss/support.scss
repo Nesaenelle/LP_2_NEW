@@ -9,18 +9,6 @@
   .support-section {
     height: auto;
 
-    & + .main-footer {
-      margin-top: 130px;
-
-      @media screen and (max-width: 980px) {
-        margin-top: 80px;
-      }
-
-      @media screen and (max-width: 600px) {
-        margin-top: 60px;
-      }
-    }
-
     .support-container {
       margin-top: 50px;
       display: flex;
@@ -73,6 +61,11 @@
             font-family: Montserrat;
             font-size: 14px;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            img {
+              margin-right: 10px;
+            }
             &:hover {
               text-decoration: underline;
             }

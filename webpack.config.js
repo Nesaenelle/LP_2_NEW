@@ -71,6 +71,19 @@ module.exports = {
             template: 'src/template/pages/support.pug',
             page: 'support'
         }),
+
+        new HtmlWebpackPlugin({
+            filename: 'knowledge.html',
+            template: 'src/template/pages/knowledge.pug',
+            page: 'knowledge'
+        }),
+
+        new HtmlWebpackPlugin({
+            filename: 'faq.html',
+            template: 'src/template/pages/faq.pug',
+            page: 'faq'
+        }),
+        
         new ExtractTextPlugin({ allChunks: true, filename: "styles.css" }),
         new CopyWebpackPlugin([
             { from: 'src/img', to: 'img' }

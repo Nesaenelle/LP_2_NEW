@@ -132,7 +132,12 @@ block content
 					each val in [1,2,3,4,5,6]
 						.partners-list__item
 							a(href="" target="_blank")
-								img(src='' alt='')
+								if (val % 3 == 2)
+									img(src='img/coin.png' alt='')
+								if (val % 3 == 1)
+									img(src='img/ledger.png' alt='')
+								if (val % 3 == 0)
+									img(src='img/BTC.png' alt='')
 							.partners-list__item__text(data-translate=('partners_text' + val))
 		section#contact.contacts-section
 			.container

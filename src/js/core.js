@@ -106,7 +106,9 @@ function Input(input, parent) {
                 fileName.innerHTML = this.files[0].name;
                 self.appendFiles.push(fileName);
                 self.value.push(this.files[0]);
-                insertAfter(fileName, input);
+                // insertAfter(fileName, input);
+
+                input.nextElementSibling.appendChild(fileName);
                 self.validate();
             }
         };
@@ -171,7 +173,7 @@ Input.prototype.clear = function () {
         this.value = [];
         this.input.parentNode.classList.remove('uploaded');
         this.appendFiles.forEach(r => {
-            this.input.parentNode.removeChild(r);
+            this.input.nextElementSibling.removeChild(r);
         });
         this.appendFiles = [];
     }

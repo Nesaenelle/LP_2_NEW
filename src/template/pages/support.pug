@@ -3,15 +3,15 @@ include ../parts/footer
 
 block content
 	main.main
-		section.section.support-section
+		section.section.support-section.offset
 			.container
 				.main-title
 					span(data-translate="support")
 				
 				.support-container
 					.support-left
-						.support-title Take Your Ticket here
-						.support-subtitle We answer within 30 seconds! No answering machines or robots. Communicate only with living people.
+						.support-title(data-translate="take_your_ticket_here")
+						.support-subtitle(data-translate="we_answer_within")
 
 						form.form#support-form(novalidate)
 							.input
@@ -26,17 +26,24 @@ block content
 
 							.fileupload 
 								.fileupload-wrapper 
-									span Upload your screens
+									img(src="img/Upload.svg", alt="")
+									span(data-translate="upload_your_screens")
 									input(type="file" data-error-msg='Upload file' name="files" required multiple )
+									.fileupload-wrapper__list
 
-							button.btn(type="submit" disabled) Send 
+							button.btn-main(type="submit" disabled data-translate="send") 
 					.support-right
-						.support-title You can also find answers to your questions here.
+						.support-title(data-translate="you_can_also_find")
 						ul
 							li 
-								a(href="faq.html") FAQ
+								a(href="faq.html") 
+									img(src="img/Help.svg", alt="")
+									| FAQ
 							li
-								a(href="knownladge.html") Knownladge Base
+								a(href="knowledge.html")
+									img(src="img/Help.svg", alt="")
+									span(data-translate="knowledge_base")
+
 		include ./../parts/main-footer.pug
 	include ./../translate.pug
 

@@ -73,8 +73,8 @@
 .form {
   .icon {
     display: none;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     position: absolute;
     right: 5px;
     top: 0;
@@ -114,14 +114,16 @@
         border-color: #f85359;
         & ~ .icon {
           display: block;
-          background: #f85359;
+          background: url(../img/Check.svg);
+          background-size: cover;
         }
       }
       &.valid {
         border-color: #39b54a;
         & ~ .icon {
           display: block;
-          background: #39b54a;
+          background: url(../img/Check_1.svg);
+          background-size: cover;
         }
       }
     }
@@ -131,7 +133,14 @@
     margin: 30px 0;
     position: relative;
     &-wrapper {
-        display: inline-block;
+        display: flex;
+        align-items: flex-start;
+        img {
+          margin-right: 12px;
+        }
+      &__list {
+        color: #000;
+      }
       &.uploaded {
         span {
           display: none;
@@ -193,44 +202,6 @@
     }
   }
 
-  .btn {
-    // border-radius: 0px 4px 4px 0;
-    width: 30%;
-    cursor: pointer;
-    outline: none;
-    // height: 49px;
-    width: 255px;
-    padding: 5px;
-    // border-radius:0;
-    //   background-color: #39b54a;
-    background: #56a54b;
-    border: 3px solid #56a54b;
-    color: #fff;
-    font-family: Helvetica;
-    font-size: 14px;
-    line-height: 2.14;
-    font-weight: 300;
-    font-size: 14px;
-    // text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-family: Montserrat;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    @media screen and (max-width: 600px) {
-        margin: auto;
-        display: block;
-        height: auto;
-        max-width: 250px;
-        width: 100%;
-    }
-    &:disabled {
-      color: #000;
-      background: none;
-      pointer-events: none;
-      border: 3px solid #56a54b;
-    }
-  }
   &::-webkit-input-placeholder {
     color: #b0b0b1;
   }

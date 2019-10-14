@@ -1,8 +1,8 @@
 import $ from 'jquery'
 import {Form, NES_API} from './core.js';
-import './jquery.onepage-scroll.js';
+import './vendor/jquery.onepage-scroll.js';
 import 'slick-carousel';
-import './jquery.touchSwipe.min.js';
+import './vendor/jquery.touchSwipe.min.js';
 import Roadmap from './roadmap';
 import Navigatioin from './navigation';
 import Parallax from './parallax';
@@ -10,6 +10,7 @@ import Menu from './menu';
 import Swipe from './swipe';
 import Translate from './translate';
 import Dropdown from './dropdown';
+import Accordeon from './accordeon';
 
 
 const navigation = new Navigatioin();
@@ -19,6 +20,7 @@ const menu = new Menu();
 const swipe = new Swipe();
 const translate = new Translate();
 const dropdown = new Dropdown();
+const accordeon = new Accordeon();
 
 // NES_API.add('animation', {
 //     constructor: function () {

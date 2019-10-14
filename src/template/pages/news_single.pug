@@ -3,7 +3,7 @@ include ../parts/footer
 
 block content
 	main.main
-		section.section.news-single-section
+		section.section.news-single-section.offset
 			
 			.news-single-top(style="background: url(img/chains.jpg)")
 				.container
@@ -30,8 +30,8 @@ block content
 						span(data-translate="back_to_news")
 
 					div.actions
-						img(src="", alt="")
-						img(src="", alt="")
+						img(src="img/Share.svg", alt="")
+						img(src="img/Share-ios.svg", alt="")
 						img(src="", alt="")
 		include ./../parts/main-footer.pug
 	include ./../translate.pug

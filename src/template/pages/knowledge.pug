@@ -1,0 +1,58 @@
+extends ../layout.pug
+include ../parts/footer
+
+block content
+	main.main
+		section.section.knowledge-section.offset
+			.container
+				.main-title
+					span(data-translate="knowledge_base")
+				
+				.knowledge-container
+					.knowledge-filter
+						.input(data-accordeon-search)
+							input(type="text")
+							.result-text(data-accordeon-search-result)
+					.knowledge-left
+						ul
+							each val,index in [0,1,2,3,4,5,6,7,8]
+								li(data-accordeon-tab=index class=(val === 0 ? 'active': ''))
+									span(data-translate=('knowledge_menu' + val) )
+									.accordeon(data-accordeon=val class=(val === 0 ? 'active': ''))
+										each val,index in ['Does EXMO have an API?', 'What is EX-CODE and how do you use it?', 'What is the Affiliate Program?', 'Cashback', 'How do I deposit / withdraw funds on the website and what are the commissions?', 'How long does it take to deposit / withdraw fiat currencies (RUR, USD, EUR, UAH)?', 'Can I transfer funds between my EXMO accounts?', 'Error 10325', 'Error 10403', 'What if I suspect that my account was hacked?', 'Error 10419', 'Error - IP address is not trusted']
+											.accordeon-title(data-accordeon-title=index)=val
+											.accordeon-content(style=(index === 0 ? 'display: block': 'display: none'))
+												p The difference in the time on your mobile device and your computer could be the reason why your TOTR (two-factor authentication) codes don’t work on your device.
+												p The time on the mobile device and the computer must match exactly up to seconds.
+												p To make sure that your Google Authenticator app is synced correctly:
+												p 1) Go to the main menu of the Google Authenticator app
+												p 2) Tap More and then Settings;
+												p 3) Tap Time correction for codes;
+												p 4) Tap Sync now.
+												p On the next screen, the app will confirm that the time has been synced, and you should now be able to use your verification codes to sign in. The sync will only affect the internal time of your Google Authenticator app, and will not change your device’s Date & Time settings.
+												
+						.tip(data-translate="if_you_cant_find")
+						.btn-main.transparent(data-translate="send_ticket")
+						.tip 
+							span(data-translate="or_go_to")
+							a(href="faq.html") FAQ
+					.knowledge-right
+						each tab in [0,1,2,3,4,5,6,7,8]
+							.accordeon(data-accordeon=tab class=(tab === 0 ? 'active': ''))
+								each val,index in ['Does EXMO have an API?', 'What is EX-CODE and how do you use it?', 'What is the Affiliate Program?', 'Cashback', 'How do I deposit / withdraw funds on the website and what are the commissions?', 'How long does it take to deposit / withdraw fiat currencies (RUR, USD, EUR, UAH)?', 'Can I transfer funds between my EXMO accounts?', 'Error 10325', 'Error 10403', 'What if I suspect that my account was hacked?', 'Error 10419', 'Error - IP address is not trusted']
+									.accordeon-title(data-accordeon-title=index class=(index === 0 ? 'active': ''))=val
+									.accordeon-content(style=(index === 0 ? 'display: block': 'display: none'))
+										p The difference in the time on your mobile device and your computer could be the reason why your TOTR (two-factor authentication) codes don’t work on your device.
+										p The time on the mobile device and the computer must match exactly up to seconds.
+										p To make sure that your Google Authenticator app is synced correctly:
+										p 1) Go to the main menu of the Google Authenticator app
+										p 2) Tap More and then Settings;
+										p 3) Tap Time correction for codes;
+										p 4) Tap Sync now.
+										p On the next screen, the app will confirm that the time has been synced, and you should now be able to use your verification codes to sign in. The sync will only affect the internal time of your Google Authenticator app, and will not change your device’s Date & Time settings.
+													
+		include ./../parts/main-footer.pug
+	include ./../translate.pug
+
+block footer
+	+footer({showMouse: false, initClass: ''})

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="14px" viewBox="0 0 12 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Icons/Share-ios</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M6.99999997,10.5 L6.99999997,16.5 C6.99999997,17.0522848 7.44771523,17.5 7.99999997,17.5 L7.99999997,17.5 L16,17.5 C16.5522848,17.5 17,17.0522848 17,16.5 L17,16.5 L17,10.5 L18,10.5 L18,16.5 C18,17.6045695 17.1045695,18.5 16,18.5 L16,18.5 L7.99999997,18.5 C6.89543048,18.5 5.99999997,17.6045695 5.99999997,16.5 L5.99999997,16.5 L5.99999997,10.5 L6.99999997,10.5 Z M12.01,5.31999997 L14.84,8.14999998 L14.13,8.84999999 L12.5,7.21999998 L12.5,14.5 L11.5,14.5 L11.5,7.23999998 L9.88999999,8.84999999 L9.17999999,8.14999998 L12.01,5.31999997 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop_News-Copy" transform="translate(-1066.000000, -1131.000000)">
+            <g id="Icons/Share-ios" transform="translate(1060.000000, 1126.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Combined-Shape" fill-rule="nonzero"></g>
+                <g id="Colors/7" mask="url(#mask-2)" fill="#000000" fill-rule="evenodd">
+                    <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
