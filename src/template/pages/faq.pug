@@ -1,0 +1,106 @@
+extends ../layout.pug
+include ../parts/footer
+
+block content
+	main.main
+		section.section.faq-section.offset
+			.container
+				.main-title
+					span FAQ
+				
+				.faq-container
+					.filter
+						.input(data-accordeon-search)
+							input(type="text")
+							.result-text(data-accordeon-search-result)
+
+					.faq-list
+							.accordeon(data-accordeon="0")
+								.accordeon-wrapper
+									.accordeon-title(data-accordeon-title="0" class="active") Beginner's Guide
+									.accordeon-content(style="display: block")
+										a(href="faq_single.html") 
+											p How to Register on Exchange2
+										a(href="faq_single.html") How to Deposit to Exchange2
+										a(href="faq_single.html") How to Trade on Exchange2
+										a(href="faq_single.html") How to Withdraw from Exchange2
+										a(href="faq_single.html") How to convert your small amount balance to EX2
+										a(href="faq_single.html") How to create API
+										a(href="faq_single.html") API Frequently Asked Questions (FAQ)
+										a(href="faq_single.html") Exchange2 Info Q&A
+										a(href="faq_single.html") Exchange2 Info Guide
+										a(href="faq_single.html") Exchange2 Referral Program Guide
+								.accordeon-wrapper
+									.accordeon-title(data-accordeon-title="1" class="active") Two-Factor Authentication
+									.accordeon-content(style="display: block")
+										a(href="faq_single.html") How to delete YubiKey for Two-factor Authentication (2FA)
+										a(href="faq_single.html") Using a YubiKey for Two-Factor Authentication (2FA)
+										a(href="faq_single.html") 2FA Code Error
+										a(href="faq_single.html") How to Reset SMS Authentication
+										a(href="faq_single.html") Google Auth (2FA) Binding Failure
+										a(href="faq_single.html") Supported SMS countries
+								.accordeon-wrapper
+									.accordeon-title(data-accordeon-title="2" class="active") Account Access
+									.accordeon-content(style="display: block")
+										a(href="faq_single.html") How to Complete Identity Verification
+										a(href="faq_single.html") How to Use the Sub-Account Feature?
+										a(href="faq_single.html") Corporate Account Application Q&A
+										a(href="faq_single.html") How to Unlock an Account
+										a(href="faq_single.html") How to Whitelist Binance Emails
+										a(href="faq_single.html") How to Disable an Account
+								.accordeon-wrapper
+									.accordeon-title(data-accordeon-title="3" class="active") Security
+									.accordeon-content(style="display: block")
+										a(href="faq_single.html") Security Tips
+										a(href="faq_single.html") Securing Your Trading Account
+										a(href="faq_single.html") How to prevent phishing attacks
+										a(href="faq_single.html") Phishing Site Cases
+										a(href="faq_single.html") Phishing Email Cases
+										a(href="faq_single.html") Types of Phishing - Email
+								.accordeon-wrapper
+									.accordeon-title(data-accordeon-title="4" class="active") Deposit/Withdraw
+									.accordeon-content(style="display: block")
+										a(href="faq_single.html") Summary of Wrong Deposit
+										a(href="faq_single.html") Deposit hasn't been credited
+										a(href="faq_single.html") Withdraw to wrong address
+										a(href="faq_single.html") Cannot receive Email
+										a(href="faq_single.html") Withdrawals missing
+								.accordeon-wrapper
+									.accordeon-title(data-accordeon-title="5" class="active") Trading
+									.accordeon-content(style="display: block")
+										a(href="faq_single.html") How to use One-Cancels-the-Other function
+										a(href="faq_single.html") How to handle Order Exceptions
+										a(href="faq_single.html") What Do "Maker" and "Taker" Mean?
+										a(href="faq_single.html") Trading Rule
+										a(href="faq_single.html") Exchange2 API Trading Rules
+										a(href="faq_single.html") How to use Stop-Limit Function
+								.accordeon-wrapper
+									.accordeon-title(data-accordeon-title="6" class="active") Miscellaneous
+									.accordeon-content(style="display: block")
+										a(href="faq_single.html") NPXS Monthly Token Unlock Program
+										a(href="faq_single.html") How Exchange2 Distributes VTHO to VET Holders
+										a(href="faq_single.html") How Exchange2 Distributes ONG to ONT Holders
+										a(href="faq_single.html") Listing a Coin on Exchange2
+										a(href="faq_single.html") How Exchange2 Distributes GAS to NEO Holders
+										a(href="faq_single.html") What deductible fees does BNB charge?
+								.accordeon-wrapper
+									.accordeon-title(data-accordeon-title="7" class="active") Buy Exchange2 FAQ
+									.accordeon-content(style="display: block")
+										a(href="faq_single.html") How Do I Get Started on Koinal
+										a(href="faq_single.html") Simplex FAQ
+										a(href="faq_single.html") How do I Get Started on Simplex
+
+					.faq-bottom
+						div
+							.tip(data-translate="if_you_cant_find")
+							.tip 
+								span(data-translate="or_go_to")
+								a(href="knowledge.html" data-translate="knowledge_base") 
+
+						.btn-main.transparent(data-translate="send_ticket")
+						
+		include ./../parts/main-footer.pug
+	include ./../translate.pug
+
+block footer
+	+footer({showMouse: false, initClass: ''})

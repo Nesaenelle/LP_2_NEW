@@ -29,7 +29,7 @@ export default class Dropdown {
       $('[data-accordeon-search] input').on('input', function () {
          let value = this.value;
          let re = new RegExp(value, "g");
-         let accordeon = accordeons.filter(':visible').filter('.active');
+         let accordeon = accordeons.filter(':visible');//.filter('.active');
          let titles = $(accordeon).find('[data-accordeon-title]');
          let accordeonId = accordeon.filter(':visible').data('accordeon');
          let resultLength = 0;
@@ -41,7 +41,7 @@ export default class Dropdown {
             if (value.length && match) {
                $(elem).stop().slideDown(200);
                $(titles[i]).addClass('active');
-
+               
                $(`:contains(${value})`, elem).each(function () {
                   $(this).html($(this).html().replace(new RegExp(value, 'g'), '<span class="highlighted">' + value + '</span>'));
                });

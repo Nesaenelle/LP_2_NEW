@@ -83,6 +83,12 @@ module.exports = {
             template: 'src/template/pages/faq.pug',
             page: 'faq'
         }),
+
+        new HtmlWebpackPlugin({
+            filename: 'faq_single.html',
+            template: 'src/template/pages/faq_single.pug',
+            page: 'faq'
+        }),
         
         new ExtractTextPlugin({ allChunks: true, filename: "styles.css" }),
         new CopyWebpackPlugin([
