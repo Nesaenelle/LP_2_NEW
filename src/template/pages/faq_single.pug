@@ -1,0 +1,43 @@
+extends ../layout.pug
+include ../parts/footer
+
+block content
+	main.main
+		section.section.faq-section.offset
+			.container
+				.main-title
+					span FAQ
+
+				.faq-container
+					.filter
+						.input(data-accordeon-search)
+							input(type="text")
+							.result-text(data-accordeon-search-result)
+
+					.faq-single-list
+						.faq-single-list__title Beginner's Guide
+
+						.accordeon(data-accordeon="0")
+							each val,index in ['How to Register on Exchange2', 'How to Deposit to Exchange2', 'How to Trade on Exchange2', 'How to Withdraw from Exchange2', 'How to convert your amount balance to EX2', 'How to create API', 'API Frequently Asked Questions (FAQ)', 'Exchange2 Info Q&A', 'Exchange2 Info Guide', 'Exchange2 Referral Program Guide']
+								.accordeon-title(data-accordeon-title=index class=(index === 0 ? 'active': ''))=val
+								.accordeon-content(style=(index===0 ? "display: block": ''))
+									p Portland ugh fashion axe Helvetica, YOLO Echo Park Austin gastropub roof party. Meggings cred before they sold out messenger bag, ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit. Kogi ethnic ugh fashion axe bicycle rights. Gluten-free Odd Future American Apparel pour-over umami drinking vinegar Truffaut. Selvage sustainable plaid viral salvia readymade, lomo slow-carb before they sold out bitters leggings. 90's pickled actually biodiesel put a bird on it, butcher dreamcatcher Cosby sweater.
+									img(src="img/chains.jpg", alt="")
+									p Portland ugh fashion axe Helvetica, YOLO Echo Park Austin gastropub roof party. Meggings cred before they sold out messenger bag, ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit. Kogi ethnic ugh fashion axe bicycle rights. Gluten-free Odd Future American Apparel pour-over umami drinking vinegar Truffaut. Selvage sustainable plaid viral salvia readymade, lomo slow-carb before they sold out bitters leggings. 90's pickled actually biodiesel put a bird on it, butcher dreamcatcher Cosby sweater.
+									img(src="img/chains.jpg", alt="")
+									p Portland ugh fashion axe Helvetica, YOLO Echo Park Austin gastropub roof party. Meggings cred before they sold out messenger bag, ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit. Kogi ethnic ugh fashion axe bicycle rights. Gluten-free Odd Future American Apparel pour-over umami drinking vinegar Truffaut. Selvage sustainable plaid viral salvia readymade, lomo slow-carb before they sold out bitters leggings. 90's pickled actually biodiesel put a bird on it, butcher dreamcatcher Cosby sweater.
+						
+					.faq-bottom
+						div
+							.tip(data-translate="if_you_cant_find")
+							.tip
+								span(data-translate="or_go_to")
+								a(href="knowledge.html" data-translate="knowledge_base")
+
+						a(href="support.html").btn-main.transparent(data-translate="send_ticket")
+
+		include ./../parts/main-footer.pug
+	include ./../translate.pug
+
+block footer
+	+footer({showMouse: false, initClass: ''})

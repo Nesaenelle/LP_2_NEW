@@ -29,6 +29,7 @@ a {
 }
 
 .btn-main {
+    display: block;
     // border-radius: 0px 4px 4px 0;
     width: 30%;
     cursor: pointer;
@@ -119,7 +120,7 @@ a {
       margin: 0 0 18px;
     }
     .input {
-      width: 40%;
+      width: 44%;
       position: relative;
       @media screen and (max-width: 768px) {
         width: 100%;
@@ -138,7 +139,7 @@ a {
       }
       input {
         width: 100%;
-        max-width: 445px;
+        // max-width: 445px;
         border: none;
         border-bottom: 1px solid #798e8a;
         outline: none;
