@@ -42,12 +42,15 @@ header {
         font-weight: bold;
         text-align: center;
         color: #ffffff;
-        visibility: hidden;
-        opacity: 0;
+        // visibility: hidden;
+        // opacity: 0;
         display: none;
         align-items: center;
         justify-content: center;
         transition: 0.3s;
+        @media screen and (max-width: 600px) {
+            display: block;
+        }
         &.active {
             visibility: visible;
             opacity: 1;
@@ -248,20 +251,20 @@ header {
             height: 2px;
             background: #fff;
             display: block;
-            right: 7px;
+            right: 10px;
 
             &:nth-child(1) {
-                width: 10px;
+                width: 27px;
                 top: 12px;
             }
 
             &:nth-child(2) {
-                width: 20px;
+                width: 27px;
                 top: 21px;
             }
 
             &:nth-child(3) {
-                width: 30px;
+                width: 27px;
                 top: 30px;
             }
         }
