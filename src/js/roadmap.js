@@ -63,10 +63,10 @@ export default class Roadmap {
             }
         });
 
-        $('.team-section .scroller').on('scroll', function() {
-            var procent = (this.scrollLeft/(this.scrollWidth - window.innerWidth) ) * 100;
-            self.updateTeamIndicator(procent);
-        });
+        // $('.team-section .scroller').on('scroll', function() {
+        //     var procent = (this.scrollLeft/(this.scrollWidth - window.innerWidth) ) * 100;
+        //     self.updateTeamIndicator(procent);
+        // });
 
     }
 
@@ -74,7 +74,7 @@ export default class Roadmap {
         $('.roadmap-indicator__inner').width(procent+'%');
     }
 
-    updateTeamIndicator(procent) {
-        $('.team-indicator__inner').width(procent+'%');
-    }
+    // updateTeamIndicator(procent) {
+    //     $('.team-indicator__inner').width(procent+'%');
+    // }
 }

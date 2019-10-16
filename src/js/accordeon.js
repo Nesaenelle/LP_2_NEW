@@ -5,6 +5,15 @@ export default class Dropdown {
       const accordeons = $('.accordeon');
       const tabs = $('[data-accordeon-tab]');
       const cacheContent = [];
+      const closeAll = $('[data-accordeon-close]');
+
+      closeAll.on('click', function() {
+         // tabs.removeClass('active');
+         accordeons.each((i, accordeon) => {
+            const titles = $(accordeon).find('[data-accordeon-title]');
+            titles.removeClass('active').next().hide();
+         });
+      });
 
       tabs.on('click', function () {
          tabs.removeClass('active');
